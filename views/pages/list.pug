@@ -1,0 +1,11 @@
+extend ../layout
+block content
+  .container
+    each val, index in list.result
+      .widget
+        h4.title #{val.name}
+        .content
+          .content.tag-cloud
+            each v, i in val.list
+              a.tag(href="/list/"+v.id) #{v.name}
+    

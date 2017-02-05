@@ -1,0 +1,20 @@
+nav.main-navigation
+  .container
+    .row
+      .col-sm-12
+        .navbar-header.text-center
+          span.navbar-toggle-button.collapsed(data-toggle="collapse", data-target="#main-menu",)
+            span.sr-only Toggle navigation
+            i.fa.fa-bars
+        .collapse.navbar-collapse#main-menu
+          ul.nav.navbar-nav
+            li.nav-current
+              a(href="/") 首页
+            li
+              a(href="/list") 菜谱大全
+          form#search.navbar-form.navbar-right(action="/search")
+            .input-group
+              input.form-control(type="text", name="q", placeholder="搜索：如红烧肉")
+              #btn.input-group-addon(onclick="$('#search').submit()")
+                i.fa.fa-search
+

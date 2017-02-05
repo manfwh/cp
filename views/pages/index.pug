@@ -1,0 +1,34 @@
+extend ../layout
+block content
+  section.content-wrap
+    .container
+      .widget
+        h2.title 每日推荐
+        .row.cp-box
+          each val,index in cp
+            .col-md-4.col-sm-6.col-lg-3
+              .thumbnail
+                img(src=val.img,alt=val.title)
+                .caption
+                  h3
+                    a(href="##") #{val.title}
+                  p.text-left by #{val.name}
+
+
+
+
+      //-  
+        aside.col-md-4.sidebar
+          .widget
+            h4.title 社区
+            .content
+              p QQ群：170282321
+          .widget
+            h4.title 标签云
+            .content.tag-cloud
+              a.tag(href="/list/10001") 家常菜
+              a.tag(href="/list/10001") 家常菜
+              a.tag(href="/list/10001") 家常菜
+              a.tag(href="/list/10001") 家常菜
+              a.tag(href="/list/10001") 家常菜
+              a.tag(href="/list/10001") 家常菜

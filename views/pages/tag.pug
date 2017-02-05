@@ -1,0 +1,42 @@
+extend ../layout
+block content
+  -var datas = list.result.data
+  -var len = datas.length
+  .container
+    h2 #{listId[id]}
+    .row.tag-content
+      each val, index in datas
+        .col-md-4.col-sm-6.col-lg-3.cp-box.text-center
+          .thumbnail
+            a(href="/cookbook/"+val.id, target="_blank")
+              img.img-responsive(src=val.albums[0], alt=val.title)
+            .caption
+              h3
+                a.cp-name(href="/cookbook/"+val.id, target="_blank") #{val.title}
+              .tag-cloud
+                - var tags = val.tags.split(";");
+                each v, i in tags
+                  -var num = listId.indexOf(v)
+                  if num>-1
+                    a.tag(href="/list/"+num) #{v}
+                  else
+                    span.tag(style="background:#ccc") #{v}
+    #load.text-center
+      p.loading
+        i.fa.fa-spinner.fa-pulse.fa-fw
+        |正在加载中...
+      p.error(style="display:none")
+        a(href="#", style="color:#505050")
+          i.fa.fa-refresh.fa-fw
+          |加载失败 点击重新加载
+    a#scrollUp(href="#top", style="display:none")
+      i.fa.fa-angle-up        
+block extend
+  script(src="/javascripts/tag.js")
+    //
+      nav.pagination
+        unless pn==1
+          a.newer-posts(href="/list/"+id+"/"+(Number(pn)-1)) ← 上一页
+        span.page-number 第 #{pn} 页/共 #{Math.floor(list.result.totalNum/24)} 页
+        unless pn==Math.floor(list.result.totalNum/24)
+          a.older-posts(href="/list/"+id+"/"+(Number(pn)+1)) ← 下一页

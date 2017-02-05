@@ -1,0 +1,37 @@
+extend ../layout
+block content
+  .container
+    .row
+      // 菜谱信息 开始
+      .col-md-8
+        -var cp = data.result.data[0]
+        img.img-responsive.main-img(src=cp.albums[0],alt=cp.title)
+        h1 #{cp.title}
+        table#cp-table.table.table-bordered.table-responsive
+          tr.active
+            th(colspan="2",style="color:red") 主料
+          each val,index in cp.ingredients.split(';');
+            if index%2==0
+              tr
+            td
+              -var ing = val.split(',')
+              span #{ing[0]}
+              i #{ing[1]}
+          tr.active
+            th(colspan="2",style="color:blue") 调料
+          each val,index in cp.burden.split(';')
+            if index%2==0
+              tr
+            td
+              -var bur = val.split(',')
+              span #{bur[0]}
+              i #{bur[1]}
+        h2 作法步骤
+        ol#list.clearfix
+          each val,index in cp.steps
+            li.clearfix
+              figure
+                img.li-img.img-responsive(src=val.img)
+              figcaption.caption
+                |<b> #{index+1}.</b>
+                |#{val.step}
