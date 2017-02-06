@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var http = require('http');
 
-var key = 'b74a0af41e963aa8b0e94f4839e5022a';
 /* GET list. */
 router.get('/', function(req, res, next) {
   var options = {

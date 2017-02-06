@@ -1,5 +1,5 @@
 $(function(){
-	var key = 'b74a0af41e963aa8b0e94f4839e5022a';
+	var key = '307e911ce5d804e97c102a74a52fa873';
 	var cid = window.location.pathname.split('/list/')[1];
 	var page = 1;
 	var b = true;

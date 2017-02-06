@@ -48,7 +48,7 @@ var _req = http.request(options, (_res)=>{
   _req.end();
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-console.log(app.locals)
+
 switch(app.get('env')){
 	case 'development':
 		app.use(devlogger('dev'));
