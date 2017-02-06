@@ -18,6 +18,7 @@ Crawler.prototype.getPages = function(url) {
 				resolve(html);
 			})
 		}).on('error',function(err){
+			
 			reject(err)
 			
 		})

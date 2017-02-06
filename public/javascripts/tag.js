@@ -25,7 +25,7 @@ $(function(){
 
 	function getData(){
 		$.ajax({
-			url: 'http://192.168.1.8:3000/list/'+cid,
+			url: 'http://120.132.14.234/list/'+cid,
 			type: 'POST',
 			data: {key:key, pn:page*24},
 			dataType: 'json',
@@ -72,6 +72,7 @@ $(function(){
 			
 		},function(jqXHR, textStatus, errorThrown){
 		    //  请求失败回调
+
 			$('.error').css('display',"block");
 			$('.loading').css('display',"none")
 		})
