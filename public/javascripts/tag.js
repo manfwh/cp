@@ -25,7 +25,7 @@ $(function(){
 
 	function getData(){
 		$.ajax({
-			url: 'http://120.132.14.234/list/'+cid,
+			url: 'http://120.132.0.15/list'+cid,
 			type: 'POST',
 			data: {key:key, pn:page*24},
 			dataType: 'json',

@@ -7,8 +7,7 @@ $.fn.extend({
     }
 });
 
-// 改变导航active状态
-console.log()
+// 改变导航active状态g
 if(window.location.pathname.indexOf('list')>-1){
 	$('.navbar-nav').find('li')
      .removeClass('nav-current').eq(1)
