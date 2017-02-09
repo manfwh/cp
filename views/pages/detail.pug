@@ -35,19 +35,20 @@ block content
                 img.li-img.img-responsive(src=val.img)
               figcaption.caption
                 p #{val.step}
-        .widget
-          h2.title 肥牛金针菇的评论  
-          .text
-            textarea.form-control
-            button.btn.btn-danger#submit 评论 
-          ul.list-unstyled
-            //-
-              each val,index in cp.comment
-            li.clearfix.item
-              .pull-left.uname
-                b ccxcx
-              .wrap.fl
-                div 
-                  span.time 2054
-                  a.reply-btn(href="##") 回复
-                  p.cm-content 户籍科户籍科
+        //-
+          .widget
+            h2.title 肥牛金针菇的评论  
+            .text
+              textarea.form-control
+              button.btn.btn-danger#submit 评论 
+            ul.list-unstyled
+              //-
+                each val,index in cp.comment
+              li.clearfix.item
+                .pull-left.uname
+                  b ccxcx
+                .wrap.fl
+                  div 
+                    span.time 2054
+                    a.reply-btn(href="##") 回复
+                    p.cm-content 户籍科户籍科
